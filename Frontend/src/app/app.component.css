@@ -1,0 +1,9 @@
+/* App Component Styles */
+:host {
+    display: block;
+}
+
+main-content {
+    padding-top: 70px; /* Height of the fixed header */
+    padding-bottom: 60px; /* Height of the fixed footer */
+}

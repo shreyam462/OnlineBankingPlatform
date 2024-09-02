@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    width: 100%;
+}
+footer{
+    border-top: 5px solid #ffcc00;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #17024d;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}

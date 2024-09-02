@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Statement</title>
+    <style>
+        @page {
+            margin: 70px 50px;
+        }
+        body{
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #f7f7f7;
+        }
+
+        header{
+            background: #17024d;
+            color: white;
+            height: 70px;
+            align-items: center;
+            position: relative;
+            display: flex;
+        }
+        header .header-img{
+            float: right;
+            width: 89px; 
+            height: 50px;
+            position: absolute;
+            right: 20px;
+            top: 35px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        main{
+            width: 100%;
+            background: white;
+            padding: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 9px;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .customer-info{
+            margin-bottom: 50px;
+            padding:20px
+        }
+        .customer-info table{
+            float: right;
+            width: 60%;
+            border-collapse: collapse;
+        }
+        .customer-info table th{
+            /* border: 1px solid #17024d; */
+            padding: 2px;
+            text-align: left;
+            background: #17024d;
+            color: white;
+        }
+        .customer-info table td{
+            border: 1px solid #17024d;
+            padding: 2px;
+            text-align: left;
+        }
+
+        .transactions{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .transactions table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .transactions table th{
+            border: 1px solid white;
+            padding: 2px;
+            text-align: left;
+            background: #17024d;
+            color: white
+        }
+        .transactions table td{
+            border: 1px solid #17024d;
+            padding: 2px;
+            text-align: left;
+        }
+
+        footer{
+            border-top: 5px solid #ffcc00;
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+            background-color: #17024d;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-img">
+            <!-- <img src="classpath:/static/sbi-logo.jpg" alt="logo"> -->
+            <img src="classpath:/static/bank_logo2.jpg" alt="logo">
+        </div>
+    </header>
+
+    <main>
+        <div class="title">Account Statement</div>
+        <div class="customer-info">
+            <table>
+                <tr>
+                    <th>Customer Name:</th>
+                    <td th:text="${accountStatement.customerName}"></td>
+                </tr>
+                <tr>
+                    <th>Account Number:</th>
+                    <td th:text="${accountStatement.accountNumber}"></td>
+                </tr>
+                <tr>
+                    <th>From Date:</th>
+                    <td th:text="${accountStatement.fromDate}"></td>
+                </tr>
+                <tr>
+                    <th>To Date:</th>
+                    <td th:text="${accountStatement.toDate}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="transactions">
+        <table>
+            <tr>
+                <th>Reference Number</th>
+                <th>Value Date</th>
+                <th>Transaction Amount</th>
+                <th>Current Balance</th>
+                <th>Journal Number</th>
+                <th>Cheque Number</th>
+                <th>Statement Narrative</th>
+                <th>Transfer Narrative</th>
+            </tr>
+            <tr th:each="transaction : ${accountStatement.transactions}">
+                <td th:text="${transaction.referenceNo}"></td>
+                <td th:text="${transaction.date}"></td>
+                <td th:text="${transaction.amount}"></td>
+                <td th:text="${transaction.balance}"></td>
+                <td th:text="${transaction.journalNo}"></td>
+                <td th:text="${transaction.chequeNo}"></td>
+                <td th:text="${transaction.statementNarrative}"></td>
+                <td th:text="${transaction.transferNarrative}"></td>
+            </tr>
+        </table>
+        </div>
+    </main>
+
+    <footer>
+        600 52 9999     |     www.bank.in
+    </footer>
+</body>
+</html>

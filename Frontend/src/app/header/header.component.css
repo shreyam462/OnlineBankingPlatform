@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+header{
+    background: #17024d;
+    color: white;
+    height: 70px;
+    align-items: center;
+    position: fixed;
+    display: flex;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+}
+header .header-img{
+    float: right;
+    width: 89px; 
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
