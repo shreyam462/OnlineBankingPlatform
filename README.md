@@ -43,7 +43,7 @@ The Online Banking Platform is a full-stack web application developed to provide
 
 3. **Set up the database schema:**
 
-   Execute the `db.sql` file located in the root directory to set up the necessary database schema:
+   Execute the [db.sql](db.sql) file located in the root directory to set up the necessary database schema:
 
    ```bash
    mysql -u <username> -p<password> 
@@ -79,33 +79,33 @@ The Online Banking Platform is a full-stack web application developed to provide
 
    The application will be available at `http://localhost:4200`.
 
-## media\screenshots
+## Screenshots
 
 ### Landing Page
 
-![Landing Page](media\screenshots\landing_page.png)
+![Landing Page](media/screenshots/landing_page.png)
 
 ### Login Page
 
-![Login Page](media\screenshots\login_page.png)
+![Login Page](media/screenshots/login_page.png)
 
 ### Home Page
 
-![Home Page](media\screenshots\home_page.png)
-![Home Page](media\screenshots\home_date.png)
-![Home Page](media\screenshots\home_view_transactions.png)
+![Home Page](media/screenshots/home_page.png)
+![Home Page](media/screenshots/home_date.png)
+![Home Page](media/screenshots/home_view_transactions.png)
 
 ### Generated PDF
 
-![Generated PDF](media\screenshots\pdf_unsigned.png)
-![Generated PDF](media\screenshots\pdf_signed.png)
-![Generated PDF](media\screenshots\pdf_signed_zoomed.png)
+![Generated PDF](media/screenshots/pdf_unsigned.png)
+![Generated PDF](media/screenshots/pdf_signed.png)
+![Generated PDF](media/screenshots/pdf_signed_zoomed.png)
 
 ### Transactions CRUD
 
-![Transactions CRUD](media\screenshots\transactionCRUD_get.png)
-![Transactions CRUD](media\screenshots\transactionCRUD_edit.png)
-![Transactions CRUD](media\screenshots\transactionCRUD_add.png)
+![Transactions CRUD](media/screenshots/transactionCRUD_get.png)
+![Transactions CRUD](media/screenshots/transactionCRUD_edit.png)
+![Transactions CRUD](media/screenshots/transactionCRUD_add.png)
 
 ## Contributing
 
