@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  padding-top: 70px; /* Height of the fixed header */
+  padding-bottom: 60px; /* Height of the fixed footer */
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 1em;
+  }

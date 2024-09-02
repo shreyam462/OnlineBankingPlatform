@@ -1,0 +1,58 @@
+<div *ngIf="customer" class="customer-details">
+    <h2>Customer Details</h2>
+    <p><strong>Username:</strong> {{ customer.username }}</p>
+    <p><strong>Email:</strong> {{ customer.email }}</p>
+    <p><strong>Name:</strong> {{ customer.name }}</p>
+    <p><strong>Account Number:</strong> {{ customer.account.accountNumber }}</p>
+</div>
+
+  <div>
+    <label for="fromDate">From Date:</label>
+    <input type="date" id="fromDate" [(ngModel)]="fromDate">
+  
+    <label for="toDate">To Date:</label>
+    <input type="date" id="toDate" [(ngModel)]="toDate">
+  
+    <button (click)="getTransactions()">View Transactions</button>
+    <button (click)="navigateToTransactions()">Edit Transactions</button>
+  </div>
+
+  <div *ngIf="transactions.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Reference No</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Balance</th>
+          <th>Journal No</th>
+          <th>Cheque No</th>
+          <th>Statement Narrative</th>
+          <th>Transfer Narrative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.referenceNo }}</td>
+          <td>{{ transaction.date | date }}</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.balance }}</td>
+          <td>{{ transaction.journalNo }}</td>
+          <td>{{ transaction.chequeNo }}</td>
+          <td>{{ transaction.statementNarrative }}</td>
+          <td>{{ transaction.transferNarrative }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="button-group">
+    <label>Generate Account Statement PDF:</label>
+    <button (click)="generateAccountStatement(false)">Unsigned</button>
+    <button (click)="generateAccountStatement(true)">Signed</button>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
